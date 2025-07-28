@@ -1,3 +1,4 @@
+/* Estilo base da página */
 html {
   color: brown;
   background-color: beige;
@@ -8,24 +9,17 @@ html {
   text-indent: 1em;
 }
 
+/* Cabeçalhos */
 h1, h2, h3 {
   text-align: center;
   margin: 0.5em 0;
 }
 
-h1 {
-  font-size: 1.8rem;
-}
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.2rem; }
 
-h2 {
-  font-size: 1.4rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-
+/* Links */
 a {
   color: orangered;
   text-decoration: none;
@@ -35,27 +29,50 @@ a:hover {
   color: red;
 }
 
-
 abbr {
   font-variant: small-caps;
 }
 
-
+/* Introdução */
 #zen-intro {
   text-align: center;
+  height: 550px;
 }
 
 #zen-intro header {
-  background-color: #000000;
-  color: #ff3700;
+  background-color: #2f303422;
+  color: #adc2b8;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1em;
 }
 
-#zen-intro header h1, #zen-intro header h2 {
+#zen-intro header h1,
+#zen-intro header h2 {
   margin-left: 1em;
+}
+
+/* Seção de explicação + select design lado a lado */
+#zen-supporting {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+/* Explicação - ocupa 60% */
+.explanation {
+  flex: 0 0 60%;
+  border-right: 1px solid #1f295c;
+  padding-right: 2%;
+  box-sizing: border-box;
+}
+
+/* Select a design - ocupa 35% */
+#design-selection {
+  flex: 0 0 35%;
+  padding-left: 2%;
+  box-sizing: border-box;
 }
 
 aside ul {
@@ -68,59 +85,12 @@ aside ul li {
   text-align: center;
 }
 
-
-.explanation {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1em;
+/* Oculta design archives */
+#design-archives {
+  display: none;
 }
 
-
-#zen-participation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  border-top: none;
-  border-bottom: 2px solid brown;
-  padding: 1em 0;
-  gap: 1em;
-}
-
-#zen-participation h3 {
-  flex: 1 1 100%;
-  text-align: center;
-  margin: 0;
-}
-
-#zen-participation p {
-  flex: 1 1 50%;
-  margin: 0;
-  padding: 0 1em;
-  line-height: 1.5;
-}
-
-#zen-benefits {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  border-top: 2px solid brown;
-  border-bottom: none;
-  padding: 1em 0;
-}
-
-#zen-benefits h3 {
-  flex: 0 0 30%;
-  text-align: center;
-  margin: 0;
-}
-
-#zen-benefits p {
-  flex: 0 0 70%;
-  margin: 0;
-  line-height: 1.5;
-}
-
-
+/* Rodapé centralizado com espaçamento */
 .main footer {
   background-color: #333;
   color: white;
@@ -144,20 +114,63 @@ aside ul li {
   box-sizing: border-box;
 }
 
-#design-archives {
-  display: none;
+/* Seção Participation */
+#zen-participation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1em 0;
+  border-top: none;
+  border-bottom: 2px solid brown;
+  gap: 1em;
 }
 
-#design-selection,#zen-summary,#zen-explanation {
-  width: 100%;
-  padding: 1em;
-  box-sizing: border-box;
+#zen-participation h3 {
+  flex: 1 1 100%;
+  text-align: center;
+  margin: 0;
 }
 
-#zen-explanation p {
+#zen-participation p {
+  flex: 1 1 50%;
+  margin: 0;
+  padding: 0 1em;
   line-height: 1.5;
 }
 
-#zen-intro {
-  height: 550px;
+/* Seção Benefits com texto à esquerda e título à direita */
+#zen-benefits {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 0;
+  border-top: 2px solid brown;
+  border-bottom: none;
+}
+
+#zen-benefits p {
+  flex: 0 0 70%;
+  margin: 0;
+  line-height: 1.5;
+}
+
+#zen-benefits h3 {
+  flex: 0 0 30%;
+  text-align: center;
+  margin: 0;
+}
+
+/* Ajustes nos parágrafos das seções */
+#zen-explanation p,
+#zen-participation p {
+  line-height: 1.5;
+}
+
+/* Corrige largura de outras seções que sobraram */
+#zen-summary,
+#zen-preamble,
+#zen-requirements {
+  width: 100%;
+  padding: 1em 0;
+  box-sizing: border-box;
 }
